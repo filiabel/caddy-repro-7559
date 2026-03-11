@@ -1,0 +1,37 @@
+{"level":"info","ts":1773256470.9165492,"msg":"using config from file","file":"/etc/caddy/Caddyfile"}
+{"level":"info","ts":1773256470.9169836,"msg":"adapted config to JSON","adapter":"caddyfile"}
+{"level":"info","ts":1773256470.917389,"logger":"admin","msg":"admin endpoint started","address":"localhost:2019","enforce_origin":false,"origins":["//[::1]:2019","//127.0.0.1:2019","//localhost:2019"]}
+{"level":"warn","ts":1773256470.9174447,"logger":"tls","msg":"on-demand TLS can only get certificates from the configured external manager(s) because no ask endpoint / permission module is specified"}
+{"level":"info","ts":1773256470.9174623,"logger":"http.auto_https","msg":"server is listening only on the HTTPS port but has no TLS connection policies; adding one to enable TLS","server_name":"srv0","https_port":443}
+{"level":"info","ts":1773256470.917466,"logger":"http.auto_https","msg":"enabling automatic HTTP->HTTPS redirects","server_name":"srv0"}
+{"level":"info","ts":1773256470.9175038,"logger":"tls.cache.maintenance","msg":"started background certificate maintenance","cache":"0x4000689180"}
+{"level":"debug","ts":1773256470.9305174,"logger":"http.auto_https","msg":"adjusted config","tls":{"automation":{"policies":[{"subjects":["*.test.local"]},{}]}},"http":{"servers":{"remaining_auto_https_redirects":{"listen":[":80"],"routes":[{},{}]},"srv0":{"listen":[":443"],"routes":[{"handle":[{"handler":"subroute","routes":[{"handle":[{"body":"wiki","handler":"static_response"}]}]}],"terminal":true},{"handle":[{"handler":"subroute","routes":[{"handle":[{"body":"wildcard","handler":"static_response"}]}]}],"terminal":true}],"tls_connection_policies":[{}],"automatic_https":{"skip_certificates":["wiki.test.local"],"prefer_wildcard":true}}}}}
+{"level":"warn","ts":1773256470.9307237,"logger":"pki.ca.local","msg":"installing root certificate (you might be prompted for password)","path":"storage:pki/authorities/local/root.crt"}
+{"level":"info","ts":1773256470.931172,"msg":"define JAVA_HOME environment variable to use the Java trust"}
+{"level":"info","ts":1773256470.931284,"msg":"warning: \"certutil\" is not available, install \"certutil\" with \"apt install libnss3-tools\" or \"yum install nss-tools\" and try again"}
+{"level":"info","ts":1773256470.931734,"logger":"tls","msg":"cleaning storage unit","storage":"FileStorage:/data/caddy"}
+{"level":"info","ts":1773256470.932413,"logger":"tls","msg":"finished cleaning storage units"}
+{"level":"info","ts":1773256470.942537,"msg":"certificate installed properly in linux trusts"}
+{"level":"debug","ts":1773256470.9426594,"logger":"http","msg":"starting server loop","address":"[::]:443","tls":true,"http3":false}
+{"level":"info","ts":1773256470.942672,"logger":"http","msg":"enabling HTTP/3 listener","addr":":443"}
+{"level":"info","ts":1773256470.942716,"msg":"failed to sufficiently increase receive buffer size (was: 208 kiB, wanted: 7168 kiB, got: 416 kiB). See https://github.com/quic-go/quic-go/wiki/UDP-Buffer-Sizes for details."}
+{"level":"info","ts":1773256470.9427583,"logger":"http.log","msg":"server running","name":"srv0","protocols":["h1","h2","h3"]}
+{"level":"debug","ts":1773256470.9427736,"logger":"http","msg":"starting server loop","address":"[::]:80","tls":false,"http3":false}
+{"level":"warn","ts":1773256470.942775,"logger":"http","msg":"HTTP/2 skipped because it requires TLS","network":"tcp","addr":":80"}
+{"level":"warn","ts":1773256470.942776,"logger":"http","msg":"HTTP/3 skipped because it requires TLS","network":"tcp","addr":":80"}
+{"level":"info","ts":1773256470.9427767,"logger":"http.log","msg":"server running","name":"remaining_auto_https_redirects","protocols":["h1","h2","h3"]}
+{"level":"info","ts":1773256470.9427779,"logger":"http","msg":"enabling automatic TLS certificate management","domains":["*.test.local"]}
+{"level":"info","ts":1773256470.9433343,"msg":"autosaved config (load with --resume flag)","file":"/config/caddy/autosave.json"}
+{"level":"info","ts":1773256470.943341,"msg":"serving initial configuration"}
+{"level":"debug","ts":1773256474.9375522,"logger":"events","msg":"event","name":"tls_get_certificate","id":"ebc87594-3ddd-4f2a-9843-1f3c0160cde4","origin":"tls","data":{"client_hello":{"CipherSuites":[4867,4866,4865,52393,52392,52394,49200,49196,49192,49188,49172,49162,159,107,57,65413,196,136,129,157,61,53,192,132,49199,49195,49191,49187,49171,49161,158,103,51,190,69,156,60,47,186,65,49169,49159,5,4,49170,49160,22,10,255],"ServerName":"wiki.test.local","SupportedCurves":[29,23,24,25],"SupportedPoints":"AA==","SignatureSchemes":[2054,1537,1539,2053,1281,1283,2052,1025,1027,513,515],"SupportedProtos":["h2","http/1.1"],"SupportedVersions":[772,771,770,769],"RemoteAddr":{"IP":"172.20.0.1","Port":38426,"Zone":""},"LocalAddr":{"IP":"172.20.0.3","Port":443,"Zone":""}}}}
+{"level":"debug","ts":1773256474.9377398,"logger":"tls.handshake","msg":"no matching certificates and no custom selection logic","identifier":"wiki.test.local"}
+{"level":"debug","ts":1773256474.937744,"logger":"tls.handshake","msg":"no matching certificates and no custom selection logic","identifier":"*.test.local"}
+{"level":"debug","ts":1773256474.9377456,"logger":"tls.handshake","msg":"no matching certificates and no custom selection logic","identifier":"*.*.local"}
+{"level":"debug","ts":1773256474.937747,"logger":"tls.handshake","msg":"no matching certificates and no custom selection logic","identifier":"*.*.*"}
+{"level":"debug","ts":1773256474.944431,"logger":"tls.handshake","msg":"using externally-managed certificate","remote_ip":"172.20.0.1","remote_port":"38426","sni":"wiki.test.local","names":["wiki.test.local","*.test.local"],"expiration":1773342875}
+{"level":"debug","ts":1773256474.9862497,"logger":"events","msg":"event","name":"tls_get_certificate","id":"fe073cb8-600d-4b23-ab4c-23fa1142528c","origin":"tls","data":{"client_hello":{"CipherSuites":[4867,4866,4865,52393,52392,52394,49200,49196,49192,49188,49172,49162,159,107,57,65413,196,136,129,157,61,53,192,132,49199,49195,49191,49187,49171,49161,158,103,51,190,69,156,60,47,186,65,49169,49159,5,4,49170,49160,22,10,255],"ServerName":"other.test.local","SupportedCurves":[29,23,24,25],"SupportedPoints":"AA==","SignatureSchemes":[2054,1537,1539,2053,1281,1283,2052,1025,1027,513,515],"SupportedProtos":["h2","http/1.1"],"SupportedVersions":[772,771,770,769],"RemoteAddr":{"IP":"172.20.0.1","Port":38442,"Zone":""},"LocalAddr":{"IP":"172.20.0.3","Port":443,"Zone":""}}}}
+{"level":"debug","ts":1773256474.9863071,"logger":"tls.handshake","msg":"no matching certificates and no custom selection logic","identifier":"other.test.local"}
+{"level":"debug","ts":1773256474.9863145,"logger":"tls.handshake","msg":"no matching certificates and no custom selection logic","identifier":"*.test.local"}
+{"level":"debug","ts":1773256474.986316,"logger":"tls.handshake","msg":"no matching certificates and no custom selection logic","identifier":"*.*.local"}
+{"level":"debug","ts":1773256474.9863174,"logger":"tls.handshake","msg":"no matching certificates and no custom selection logic","identifier":"*.*.*"}
+{"level":"debug","ts":1773256474.9910376,"logger":"tls.handshake","msg":"using externally-managed certificate","remote_ip":"172.20.0.1","remote_port":"38442","sni":"other.test.local","names":["other.test.local","*.test.local"],"expiration":1773342875}

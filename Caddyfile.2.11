@@ -1,0 +1,14 @@
+{
+	debug
+}
+
+*.test.local {
+	tls {
+		get_certificate http http://cert-server:9000/certs
+	}
+	respond "wildcard"
+}
+
+wiki.test.local {
+	respond "wiki"
+}

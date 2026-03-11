@@ -1,0 +1,41 @@
+{"level":"info","ts":1773256485.8138013,"msg":"maxprocs: Leaving GOMAXPROCS=12: CPU quota undefined"}
+{"level":"info","ts":1773256485.8138158,"msg":"GOMEMLIMIT is updated","GOMEMLIMIT":30226751078,"previous":9223372036854775807}
+{"level":"info","ts":1773256485.8138182,"msg":"using config from file","file":"/etc/caddy/Caddyfile"}
+{"level":"info","ts":1773256485.8138192,"msg":"adapted config to JSON","adapter":"caddyfile"}
+{"level":"info","ts":1773256485.8141167,"logger":"admin","msg":"admin endpoint started","address":"localhost:2019","enforce_origin":false,"origins":["//localhost:2019","//[::1]:2019","//127.0.0.1:2019"]}
+{"level":"warn","ts":1773256485.814204,"logger":"tls","msg":"on-demand TLS can only get certificates from the configured external manager(s) because no ask endpoint / permission module is specified"}
+{"level":"info","ts":1773256485.8144438,"logger":"http.auto_https","msg":"server is listening only on the HTTPS port but has no TLS connection policies; adding one to enable TLS","server_name":"srv0","https_port":443}
+{"level":"info","ts":1773256485.8144548,"logger":"http.auto_https","msg":"enabling automatic HTTP->HTTPS redirects","server_name":"srv0"}
+{"level":"info","ts":1773256485.8142858,"logger":"tls.cache.maintenance","msg":"started background certificate maintenance","cache":"0x28b90e893780"}
+{"level":"debug","ts":1773256485.8187528,"logger":"http.auto_https","msg":"adjusted config","tls":{"automation":{"policies":[{"subjects":["wiki.test.local"]},{"subjects":["*.test.local"]},{}]}},"http":{"servers":{"remaining_auto_https_redirects":{"listen":[":80"],"routes":[{},{}]},"srv0":{"listen":[":443"],"routes":[{"handle":[{"handler":"subroute","routes":[{"handle":[{"body":"wiki","handler":"static_response"}]}]}],"terminal":true},{"handle":[{"handler":"subroute","routes":[{"handle":[{"body":"wildcard","handler":"static_response"}]}]}],"terminal":true}],"tls_connection_policies":[{}],"automatic_https":{}}}}}
+{"level":"debug","ts":1773256485.8188562,"logger":"http","msg":"starting server loop","address":"[::]:443","tls":true,"http3":false}
+{"level":"info","ts":1773256485.8188653,"logger":"http","msg":"enabling HTTP/3 listener","addr":":443"}
+{"level":"info","ts":1773256485.8188946,"msg":"failed to sufficiently increase receive buffer size (was: 208 kiB, wanted: 7168 kiB, got: 416 kiB). See https://github.com/quic-go/quic-go/wiki/UDP-Buffer-Sizes for details."}
+{"level":"info","ts":1773256485.818945,"logger":"http.log","msg":"server running","name":"srv0","protocols":["h1","h2","h3"]}
+{"level":"debug","ts":1773256485.8189611,"logger":"http","msg":"starting server loop","address":"[::]:80","tls":false,"http3":false}
+{"level":"warn","ts":1773256485.8189633,"logger":"http","msg":"HTTP/2 skipped because it requires TLS","network":"tcp","addr":":80"}
+{"level":"warn","ts":1773256485.8189642,"logger":"http","msg":"HTTP/3 skipped because it requires TLS","network":"tcp","addr":":80"}
+{"level":"info","ts":1773256485.8189647,"logger":"http.log","msg":"server running","name":"remaining_auto_https_redirects","protocols":["h1","h2","h3"]}
+{"level":"info","ts":1773256485.818966,"logger":"http","msg":"enabling automatic TLS certificate management","domains":["wiki.test.local","*.test.local"]}
+{"level":"info","ts":1773256485.8218446,"logger":"tls","msg":"cleaning storage unit","storage":"FileStorage:/data/caddy"}
+{"level":"warn","ts":1773256485.8247592,"logger":"pki.ca.local","msg":"installing root certificate (you might be prompted for password)","path":"storage:pki/authorities/local/root.crt"}
+{"level":"info","ts":1773256485.827776,"logger":"tls","msg":"finished cleaning storage units"}
+{"level":"info","ts":1773256485.8279548,"msg":"warning: \"certutil\" is not available, install \"certutil\" with \"apt install libnss3-tools\" or \"yum install nss-tools\" and try again"}
+{"level":"info","ts":1773256485.8279622,"msg":"define JAVA_HOME environment variable to use the Java trust"}
+{"level":"info","ts":1773256485.8394907,"msg":"certificate installed properly in linux trusts"}
+{"level":"debug","ts":1773256485.8395565,"logger":"events","msg":"event","name":"started","id":"d8db1d1b-cbf3-4d1e-9160-d923fc3ffb59","origin":"","data":null}
+{"level":"info","ts":1773256485.8400867,"msg":"autosaved config (load with --resume flag)","file":"/config/caddy/autosave.json"}
+{"level":"info","ts":1773256485.840094,"msg":"serving initial configuration"}
+{"level":"debug","ts":1773256489.8399947,"logger":"events","msg":"event","name":"tls_get_certificate","id":"ff09e857-8f02-4190-8cf1-06763542022c","origin":"tls","data":{"client_hello":{"CipherSuites":[4867,4866,4865,52393,52392,52394,49200,49196,49192,49188,49172,49162,159,107,57,65413,196,136,129,157,61,53,192,132,49199,49195,49191,49187,49171,49161,158,103,51,190,69,156,60,47,186,65,49169,49159,5,4,49170,49160,22,10,255],"ServerName":"wiki.test.local","SupportedCurves":[29,23,24,25],"SupportedPoints":"AA==","SignatureSchemes":[2054,1537,1539,2053,1281,1283,2052,1025,1027,513,515],"SupportedProtos":["h2","http/1.1"],"SupportedVersions":[772,771,770,769],"RemoteAddr":{"IP":"172.20.0.1","Port":39196,"Zone":""},"LocalAddr":{"IP":"172.20.0.3","Port":443,"Zone":""}}}}
+{"level":"debug","ts":1773256489.84015,"logger":"tls.handshake","msg":"no matching certificates and no custom selection logic","identifier":"wiki.test.local"}
+{"level":"debug","ts":1773256489.840155,"logger":"tls.handshake","msg":"no matching certificates and no custom selection logic","identifier":"*.test.local"}
+{"level":"debug","ts":1773256489.8401563,"logger":"tls.handshake","msg":"no matching certificates and no custom selection logic","identifier":"*.*.local"}
+{"level":"debug","ts":1773256489.840158,"logger":"tls.handshake","msg":"no matching certificates and no custom selection logic","identifier":"*.*.*"}
+{"level":"debug","ts":1773256489.8401744,"logger":"tls.handshake","msg":"no certificate matching TLS ClientHello","remote_ip":"172.20.0.1","remote_port":"39196","server_name":"wiki.test.local","remote":"172.20.0.1:39196","identifier":"wiki.test.local","cipher_suites":[4867,4866,4865,52393,52392,52394,49200,49196,49192,49188,49172,49162,159,107,57,65413,196,136,129,157,61,53,192,132,49199,49195,49191,49187,49171,49161,158,103,51,190,69,156,60,47,186,65,49169,49159,5,4,49170,49160,22,10,255],"cert_cache_fill":0,"load_or_obtain_if_necessary":true,"on_demand":false}
+{"level":"debug","ts":1773256489.840265,"logger":"http.stdlib","msg":"http: TLS handshake error from 172.20.0.1:39196: no certificate available for 'wiki.test.local'"}
+{"level":"debug","ts":1773256489.855344,"logger":"events","msg":"event","name":"tls_get_certificate","id":"5f7d1cb4-0f55-4b0f-90ae-8434570dfde6","origin":"tls","data":{"client_hello":{"CipherSuites":[4867,4866,4865,52393,52392,52394,49200,49196,49192,49188,49172,49162,159,107,57,65413,196,136,129,157,61,53,192,132,49199,49195,49191,49187,49171,49161,158,103,51,190,69,156,60,47,186,65,49169,49159,5,4,49170,49160,22,10,255],"ServerName":"other.test.local","SupportedCurves":[29,23,24,25],"SupportedPoints":"AA==","SignatureSchemes":[2054,1537,1539,2053,1281,1283,2052,1025,1027,513,515],"SupportedProtos":["h2","http/1.1"],"SupportedVersions":[772,771,770,769],"RemoteAddr":{"IP":"172.20.0.1","Port":39210,"Zone":""},"LocalAddr":{"IP":"172.20.0.3","Port":443,"Zone":""}}}}
+{"level":"debug","ts":1773256489.8554244,"logger":"tls.handshake","msg":"no matching certificates and no custom selection logic","identifier":"other.test.local"}
+{"level":"debug","ts":1773256489.8554275,"logger":"tls.handshake","msg":"no matching certificates and no custom selection logic","identifier":"*.test.local"}
+{"level":"debug","ts":1773256489.855429,"logger":"tls.handshake","msg":"no matching certificates and no custom selection logic","identifier":"*.*.local"}
+{"level":"debug","ts":1773256489.85543,"logger":"tls.handshake","msg":"no matching certificates and no custom selection logic","identifier":"*.*.*"}
+{"level":"debug","ts":1773256489.8613956,"logger":"tls.handshake","msg":"using externally-managed certificate","remote_ip":"172.20.0.1","remote_port":"39210","sni":"other.test.local","names":["other.test.local","*.test.local"],"expiration":1773342890}

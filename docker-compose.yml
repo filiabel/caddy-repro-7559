@@ -1,0 +1,17 @@
+services:
+  cert-server:
+    image: python:3.12-slim
+    command: >
+      bash -c "apt-get update -qq && apt-get install -yqq openssl >/dev/null 2>&1 &&
+      python -u /app/cert-server.py"
+    volumes:
+      - ./cert-server.py:/app/cert-server.py:ro
+
+  caddy:
+    image: caddy:${CADDY_VERSION:-2.11.2}
+    volumes:
+      - ./${CADDYFILE:-Caddyfile}:/etc/caddy/Caddyfile:ro
+    depends_on:
+      - cert-server
+    ports:
+      - "8443:443"
